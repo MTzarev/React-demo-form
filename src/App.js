@@ -25,7 +25,14 @@ function App() {
         <input type="password" name="password" id="password" />
          
         </div>
-
+<div>
+  <label htmlFor="services">Services</label>
+  <select name="services" id="services">
+    <option value="1">Privet</option>
+    <option value="2">Business</option>
+    <option value="3">Enter</option>
+  </select>
+</div>
         <input type="submit" value="Login" />
      </form>
     </div>
