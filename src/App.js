@@ -1,6 +1,16 @@
 import './App.css';
+import { useState, useEffect } from 'react';
 
 function App() {
+let [services, setServices]=useState([])
+  useEffect(()=>{
+fetch('http://localhost:3000/jsonstore/services')
+.then(res => res.json())
+.then(res =>{
+  setServices(res);
+  }) 
+},[]);
+
   let submitHandler = (e) => {
       e.preventDefault();
       
@@ -28,9 +38,8 @@ function App() {
 <div>
   <label htmlFor="services">Services</label>
   <select name="services" id="services">
-    <option value="1">Privet</option>
-    <option value="2">Business</option>
-    <option value="3">Enter</option>
+    {services.map(x=><option key={x._id} value = {x._id}>{x.name}</option>)}
+   
   </select>
 </div>
         <input type="submit" value="Login" />
