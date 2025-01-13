@@ -3,7 +3,14 @@ import './App.css';
 function App() {
   let submitHandler = (e) => {
       e.preventDefault();
-      console.log('Clicked');
+      
+      let formData = new FormData(e.currentTarget);
+      
+      let user = formData.get("username");
+      let pass = formData.get("password");
+      
+      console.log(pass);
+
   }
 
   return (
