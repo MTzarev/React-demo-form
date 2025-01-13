@@ -4,10 +4,10 @@ import { useState, useEffect } from 'react';
 function App() {
 let [services, setServices]=useState([])
   useEffect(()=>{
-fetch('http://localhost:3000/jsonstore/services')
+fetch('http://localhost:3030/jsonstore/services')
 .then(res => res.json())
-.then(res =>{
-  setServices(res);
+.then(response =>{
+  setServices(Object.values(response));
   }) 
 },[]);
 
