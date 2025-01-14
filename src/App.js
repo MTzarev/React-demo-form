@@ -24,7 +24,10 @@ fetch('http://localhost:3030/jsonstore/services')
       let pass = formData.get("password");
       console.log(pass);
     }
-    
+const onInputChangeHandler = (e)=>{
+  setUsername(e.target.value)
+}  
+
 const onServiceChange = (e)=>{
 setUsername("");
 
@@ -34,7 +37,7 @@ setUsername("");
      <form method='POST'onSubmit={submitHandler}>
         <div>
           <label htmlFor="username">UserName: </label>
-        <input type="text" name="username" id='username' value={username} onchange={(e)=>setUsername(e.target.value)}/>
+        <input type="text" name="username" id='username' value={username} onChange={onInputChangeHandler}/>
         </div>
         <div>
           <label htmlFor="passwoer">Password: </label>
